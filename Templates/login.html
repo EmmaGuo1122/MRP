@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>St. Clare’s tenant tracking tool - Login</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+    <link href="{{ url_for('static',filename='/css/lib/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/menubar/sidebar.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/sweetalert/sweetalert.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/helper.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/style.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="login-content">
+                        <div class="login-form">
+                            <h4>Tenant Tracking Tool</h4>
+                            <form action="/login" method="post" class="form-horizontal">
+                                <div class="row">
+                                    <label class="col-sm-2">Username</label>
+                                    <div class="col-sm-9">
+                                        <input name="username" type="text" class="form-control" placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2">Password</label>
+                                    <div class="col-sm-9">
+                                        <input name="password" type="password" class="form-control" placeholder="Password">
+                                    </div>                                    
+                                </div>
+                                <div class="checkbox" style="display:none;">
+                                    <label class="pull-right">
+										<a href="#">Forgotten Password?</a>
+									</label>
+                                </div>
+                                <div class="row" style="width: 100%;display: flex;align-items: center;justify-content: center;">
+                                    <button type="submit" class="btn btn-rounded m-b-30 m-t-30">Login</button>
+                                </div>
+                                <div class="row" style="display: flex;justify-content: end;">
+                                    <label class="pull-right">Version 1.0</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Common -->
+        <script src="{{ url_for('static',filename='/js/lib/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='/js/lib/jquery.nanoscroller.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='/js/lib/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='/js/scripts.js') }}"></script>
+    
+        <!-- Sweet alert Start -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Sweet alert End -->
+    
+        <script src="{{ url_for('static',filename='/js/login.js') }}"></script>
+        <script type="text/javascript">
+          {% block scripts %}
+          var data = {{data|tojson|safe}};
+          {% endblock %}
+        </script>
+
+</body>
+
+</html>

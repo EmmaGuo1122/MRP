@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>St. Clare’s tenant tracking tool - Homepage</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">   
+
+    <!-- Common -->
+    <link href="{{ url_for('static',filename='/css/lib/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/menubar/sidebar.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/lib/sweetalert/sweetalert.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/lib/helper.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='/css/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+  <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+    <div class="nano">
+      <div class="nano-content">
+        <div class="logo">
+          <a href="/">
+            <!-- <img src="assets/images/logo.png" alt="" /> -->
+            <span>Tenant Tracking Tool</span>
+          </a>
+        </div>
+        <ul classs="d-block" style="margin-top: 50%;">
+          <li class="active">
+            <a href="/" class="active">
+              <i class="ti-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="/users">
+              <i class="ti-user"></i> Users</a>
+          </li>
+          <li>
+            <a href="/sites">
+              <i class="ti-map-alt"></i> Sites</a>
+          </li>
+          <li>
+            <a href="/tenants">
+              <i class="ti-heart"></i> Tenants</a>
+          </li>
+          <li>
+            <a href="/activity_categories">
+              <i class="ti-book"></i> Activity Categories</a>
+          </li>
+          <li>
+            <a href="/tracking">
+              <i class="ti-layout-list-thumb"></i> Tracking</a>
+          </li>
+          <li>
+            <a href="/system_configurations">
+              <i class="ti-settings"></i> System Configurations</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /# sidebar -->
+
+
+  <div class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="float-left">
+            <img src="{{ url_for('static',filename='/images/st_clares_logo.png') }}" width="70" height="70">
+            <!--
+            <div class="hamburger sidebar-toggle">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+            -->
+          </div>
+          <div class="float-right">
+            <div class="dropdown dib">
+              <div class="header-icon" data-toggle="dropdown">
+                <span class="user-avatar" id="displayed_name">
+                  <i class="ti-angle-down f-s-10"></i>
+                </span>
+                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                  <div class="dropdown-content-body">
+                    <ul>
+                      <li>
+                        <a href="/change_password">
+                          <i class="ti-key"></i>
+                          <span>Change password</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/logout">
+                          <i class="ti-power-off"></i>
+                          <span>Logout</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="content-wrap">
+    <div class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 p-r-0 title-margin-right">
+            <div class="page-header">
+              <div class="page-title">
+                <h1 id="welcome_msg">
+                </h1>
+              </div>
+              <div>
+                <button id="trigger_job">Trigger scoring job</button>
+              </div>
+            </div>
+          </div>
+          <!-- /# column 
+          <div class="col-lg-4 p-l-0 title-margin-left">
+            <div class="page-header">
+              <div class="page-title">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item active">App-Profile</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          -->
+          <!-- /# column -->
+        </div>
+        <!-- /# row -->
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+    <!-- Common -->
+    <script src="{{ url_for('static',filename='/js/lib/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='/js/lib/jquery.nanoscroller.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='/js/lib/menubar/sidebar.js') }}"></script>
+    <script src="{{ url_for('static',filename='/js/lib/preloader/pace.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='/js/lib/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='/js/scripts.js') }}"></script>
+
+    <!-- Sweet alert Start -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Sweet alert End -->
+
+    <script type="text/javascript">
+      {% block scripts %}
+      var data = {{data|tojson|safe}};
+      {% endblock %}
+
+      $(document).ready(function() {
+        show_welcome_message();
+        show_displayed_name();
+
+        $('.dropdown-content-body > ul > li > a').click(function () {
+          window.location = $(this).attr('href');
+        });
+
+        if('message' in data && data['message'].length > 0) {
+          swal({
+            title: data.message,
+            icon: "warning"
+          });
+        }
+
+        if(data.current_user.role != 'SUPER_ADMIN'){
+          $('#trigger_job').attr('style', 'display:none;');
+        }
+
+        $('#trigger_job').click(function(){
+          $.ajax({
+            type: "GET",
+            url: "/api/trigger_job",
+            success: function(tenant_obj) {
+              swal({
+                title: "Trigger job successfully!",
+                icon: "success"
+              });
+            },
+            error: function(error){
+              swal({
+                title: "Error",
+                text: error.status + ' ' + error.statusText,
+                icon: "error",
+                dangerMode: true
+              });
+            }
+          });
+        });
+      });
+
+      function show_welcome_message(){
+        var current_user = data.current_user;
+        $("#welcome_msg").html('Hello '+ current_user.displayed_name+', welcome to the main screen of Tenant Tracking Tool!');
+      }
+
+      function show_displayed_name(){
+        var current_user = data.current_user;
+
+        var angle_down = $("#displayed_name").find("i");
+        $("#displayed_name").html(current_user.displayed_name+ ' ');
+        $("#displayed_name").append(angle_down);
+      }
+    </script>
+
+</body>
+
+</html>
